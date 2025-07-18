@@ -1,0 +1,10 @@
+.menuRef {
+    font-family: var(--body-font);
+    font-weight: 500;
+}
+
+li .cybg {
+    color: var(--accent-color);
+    top: 416px;
+    left: -120px;
+}

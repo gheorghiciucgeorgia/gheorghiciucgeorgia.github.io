@@ -1,0 +1,18 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nova+Square&family=Oxanium:wght@200..800&display=swap');
+
+/* Tailwind CSS */
+@import "tailwindcss";
+
+/* Global variables */
+:root {
+    --primary-color: #1A1A1A;
+    --secondary-color: #4243AE;
+    --secondary-color-variation: #a0a1d6;
+    --accent-color: #AEFF00;
+    --accent-color-2: #00FFE0;
+    --neutral-color: #E0E0E0;
+    --heading-font: 'Nova Square', sans-serif;
+    --body-font: 'Oxanium', sans-serif;
+}
