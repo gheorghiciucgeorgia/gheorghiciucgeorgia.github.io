@@ -16,6 +16,9 @@ const Navbar: React.FC = () => {
   const panel2Ref = useRef<HTMLDivElement>(null);
   const panel3Ref = useRef<HTMLDivElement>(null);
 
+  const line = useRef<HTMLDivElement>(null);
+  const barCode = useRef<HTMLDivElement>(null);
+
   useGSAP(
     () => {
       const tl = gsap.timeline({ defaults: { ease: "power3.inOut" } });
@@ -30,12 +33,17 @@ const Navbar: React.FC = () => {
         tl.to(burgerBottom.current, { rotate: -45, y: -9, duration: 0.3 }, 0);
 
         // Pannels animation comming in diagonals
-        tl.fromTo(panel1Ref.current,{ x: "-162%", y:"13%", opacity:1  },{ x: "-62%", y: "-32%", opacity: 1, duration: 0.7 },0);
-        tl.fromTo(panel2Ref.current,{ x: "162%", y: "-68%", opacity: 1 },{x: "8%", y: "3%", opacity: 1, duration: 0.7 },"-=0.6");
-        tl.fromTo(panel3Ref.current,{x: "-91%", y: "101%", opacity: 1 },{ x:"27%", y: "61%", opacity: 1, duration: 0.7 },"-=0.5");
+        tl.fromTo(panel1Ref.current, { x: "-162%", y:"13%", opacity:1  }, { x: "-62%", y: "-32%", opacity: 1, duration: 0.7 },0);
+        tl.fromTo(panel2Ref.current, { x: "162%", y: "-68%", opacity: 1 }, { x: "8%", y: "3%", opacity: 1, duration: 0.7 },"-=0.6");
+        tl.fromTo(panel3Ref.current, { x: "-91%", y: "101%", opacity: 1 }, { x:"27%", y: "61%", opacity: 1, duration: 0.7 },"-=0.5");
 
         // Menu appears
         tl.to(menuRef.current, { display:"block",  opacity: 1, duration: 0.3  }, "-=0.3");
+
+        // Line and barcode animations
+        tl.fromTo(line.current,{ height:"0%" }, { height:"500px", duration:1 }, "-=0.2");
+        tl.fromTo(barCode.current,{ opacity:0 }, { opacity:1 }, "-=0.2");
+
       } else {
         // From x to burger menu
         tl.to(burgerTop.current, { rotate: 0, y: 0, duration: 0.3 }, 0);
@@ -62,10 +70,10 @@ const Navbar: React.FC = () => {
 
       <div className="flex justify-between items-center p-4 z-100 absolute">
         {/* Hamburger */}
-        <div className="cursor-pointer flex flex-col gap-1.5" onClick={() => setIsOpen(!isOpen)}>
-          <div ref={burgerTop} className="w-6 h-1 rounded-[10px] origin-left" style={{ backgroundColor: "var(--secondary-color-variation)" }} ></div>
-          <div ref={burgerMiddle} className="w-6 h-1 rounded-[10px] bg-black" style={{ backgroundColor: "var(--secondary-color-variation)"}}></div>
-          <div ref={burgerBottom} className="w-6 h-1 rounded-[10px] bg-black origin-left" style={{ backgroundColor: "var(--secondary-color-variation)" }}></div>
+        <div className="cursor-pointer flex flex-col gap-1.5 burger-menu" onClick={() => setIsOpen(!isOpen)}>
+          <div ref={burgerTop} className="w-6 h-1 rounded-[10px] origin-left bg-[var(--secondary-color-variation)]"></div>
+          <div ref={burgerMiddle} className="w-6 h-1 rounded-[10px] bg-[var(--secondary-color-variation)]"></div>
+          <div ref={burgerBottom} className="w-6 h-1 rounded-[10px] origin-left bg-[var(--secondary-color-variation)]"></div>
         </div>
       </div>
 
@@ -79,8 +87,8 @@ const Navbar: React.FC = () => {
       {/* Mobile Menu */}
       <div ref={menuRef} className="text-[20pt] fixed top-[50px] left-[25px] w-[356px] h-[757px] bg-none text-white p-8 hidden menuRef">
         <div className="flex flex-col">
-          <div className="w-[5px] h-[500px] top-[-50px] left-[-3px] bg-[#AEFF00] absolute"></div>
-          <i className="cybg-barcode cybg text-[150pt] absolute rotate-270 top-[450px] left-[-94px]" style={{color: "var(--accent-color)"}}></i>
+          <div ref={line} className="w-[5px] h-[500px] top-[-50px] left-[-3px] bg-[#AEFF00] absolute"></div>
+          <i ref={barCode} className="cybg-barcode cybg text-[150pt] absolute rotate-270 top-[450px] left-[-94px]" style={{color: "var(--accent-color)"}}></i>
         </div>
         <ul className="space-y-2">
           <li ><i className="cybg-star-08 cybg mr-[10px]"></i>About</li>
