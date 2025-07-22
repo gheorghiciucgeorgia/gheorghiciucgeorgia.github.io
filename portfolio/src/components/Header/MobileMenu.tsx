@@ -68,13 +68,16 @@ const MobileMenu: React.FC = () => {
   return (
     <>
 
-      <div className="flex justify-between items-center p-4 z-100 absolute">
+      <div className="flex flex-row items-center align-center justify-between p-4 z-100 absolute w-full">
         {/* Hamburger */}
         <div className="cursor-pointer flex flex-col gap-1.5 burger-menu" onClick={() => setIsOpen(!isOpen)}>
           <div ref={burgerTop} className="w-6 h-1 rounded-[10px] origin-left bg-[var(--secondary-color-variation)]"></div>
           <div ref={burgerMiddle} className="w-6 h-1 rounded-[10px] bg-[var(--secondary-color-variation)]"></div>
           <div ref={burgerBottom} className="w-6 h-1 rounded-[10px] origin-left bg-[var(--secondary-color-variation)]"></div>
         </div>
+        <div className="w-[110px] h-[60px] bg-[url('/assets/logo/light-logo.svg')] bg-contain bg-no-repeat">
+        </div>
+        <div></div>
       </div>
 
       {/* Background Panels */}
