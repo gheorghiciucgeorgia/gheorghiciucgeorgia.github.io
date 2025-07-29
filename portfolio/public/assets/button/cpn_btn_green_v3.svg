@@ -3,13 +3,11 @@
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 2000 2000" style="enable-background:new 0 0 2000 2000;" xml:space="preserve">
 <style type="text/css">
-	.st0{opacity:0.25;fill:#AEFF00;enable-background:new    ;}
-	.st1{opacity:0.5;fill:#AEFF00;enable-background:new    ;}
+	.st0{opacity:0.25;fill:none;stroke:#AEFF00;stroke-width:10;stroke-miterlimit:10;}
+	.st1{fill:none;stroke:#AEFF00;stroke-width:10;stroke-miterlimit:10;}
 </style>
 <g>
-	<path class="st0" d="M1868.6,1132.9h-1.2L0,1126.3V982.7L115.7,867H2000v134.5l-0.9,0.9L1868.6,1132.9z M6,1120.3l1860.1,6.7
-		L1994,999.1V873H118.2L6,985.2V1120.3z"/>
-	<path class="st1" d="M1861.2,1115l-2.1,0l-1841.2-6.6V990.2L123.1,885h1858.9v109.1L1861.2,1115z M27.9,1098.5l1829.2,6.6
-		l115.1-115v-95H127.2l-99.4,99.4V1098.5z"/>
+	<polygon class="st0" points="1974.5,989 1833.7,1129.9 25.5,1129.9 25.5,984.4 139.8,870.1 1974.5,870.1 	"/>
+	<polygon class="st1" points="40.4,995.8 144.9,891.2 1954.8,891.2 1954.8,976.4 1824,1107.3 40.4,1107.3 	"/>
 </g>
 </svg>
