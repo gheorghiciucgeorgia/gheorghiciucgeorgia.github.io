@@ -98,7 +98,7 @@ const Button: React.FC<ButtonProps> = ({ name, text, className, colorText, color
     return (
         <button className={`relative ${className}`}>
             {renderFrame()}
-            <span className="absolute inset-0 flex items-center justify-center ${colorText}" style={{ color: colorText }}>
+            <span className="absolute inset-0 flex items-center justify-center" style={{ color: colorText }}>
                 {text}
             </span>
         </button>
