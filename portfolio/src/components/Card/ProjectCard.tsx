@@ -190,5 +190,4 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         </div>
     );
 };
-//TODO: Add animations
 export default ProjectCard;
