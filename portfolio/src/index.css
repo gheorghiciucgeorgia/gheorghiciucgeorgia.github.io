@@ -16,3 +16,15 @@
     --heading-font: 'Nova Square', sans-serif;
     --body-font: 'Oxanium', sans-serif;
 }
+
+i[class*="fa"] {
+    font-family: "Font Awesome 6 Brands", "Font Awesome 6 Free" !important;
+}
+
+i[class*="cybg"] {
+    font-family: 'CyberG' !important;
+}
+
+i[class*="ri"] {
+    font-family: 'remixicon' !important;
+}

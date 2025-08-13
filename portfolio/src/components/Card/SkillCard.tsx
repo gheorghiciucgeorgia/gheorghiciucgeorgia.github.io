@@ -1,14 +1,16 @@
+import './SkillCard.css';
 // import { useGSAP } from "@gsap/react";
 
 type SkillCardProps = {
     icon: string;
     title: string;
+    width?: number;
     colorFrame?: string;
     colorText?: string;
     className?: string;
 }
 
-const SkillCard: React.FC<SkillCardProps> = ({ icon, title, colorFrame, colorText, className }) => {
+const SkillCard: React.FC<SkillCardProps> = ({ icon, title, colorFrame, colorText, className, width }) => {
     const renderFrame = () => {
         const c = colorFrame || '#000';
 
@@ -54,10 +56,10 @@ const SkillCard: React.FC<SkillCardProps> = ({ icon, title, colorFrame, colorTex
         )
     };
     return (
-        <div className={`relative ${className}`}>
+        <div className={`relative ${className}`} style={{ width: `${width}px` }}>
             {renderFrame()}
-            <div className="content-card absolute top-0">
-                <i className={`fa-brands fa-${icon}`} style={{ color: colorText }}></i>
+            <div className="content-card absolute top-[50%] left-[50%] flex flex-row justify-center align-center transform -translate-x-1/2 -translate-y-1/2 items-center" style={{ fontSize: `${(width ?? 100) / 10}px` }}>
+                <i className={icon} style={{ color: colorText, fontSize: `${(width ?? 100) / 10 + 5}px` }}></i>
                 <h3 className="title" style={{ color: colorText }}>{title}</h3>
             </div>
         </div>
