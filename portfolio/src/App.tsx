@@ -4,7 +4,7 @@ import './App.css'
 // import Button from './components/Button/Button.tsx';
 // import ProjectCard from './components/Card/ProjectCard.tsx';
 // import SkillCard from './components/Card/SkillCard.tsx';
-import Footer from './components/Footer/Footer.tsx';
+// import Footer from './components/Footer/Footer.tsx';
 
 function App() {
 
@@ -23,7 +23,7 @@ function App() {
 
       {/* <SkillCard icon="fa-brands fa-html5" title="HTML5" colorFrame="var(--accent-color)" colorText="var(--primary-color)" width={400} /> */}
 
-      <Footer></Footer>
+      {/* <Footer></Footer> */}
     </>
   )
 }
