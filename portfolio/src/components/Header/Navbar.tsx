@@ -1,13 +1,13 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import "./Header.css";
 
-type SvgButtonProps = React.SVGProps<SVGSVGElement> & {
+export type SvgButtonProps = React.SVGProps<SVGSVGElement> & {
     className?: string;
 };
 gsap.registerPlugin(useGSAP);
-const SvgButton: React.FC<SvgButtonProps> = ({ className, ...props }) => {
+export const SvgButton: React.FC<SvgButtonProps> = ({ className, ...props }) => {
     const polygTopR = useRef<SVGPolygonElement>(null);
     const rectangle = useRef<SVGRectElement>(null);
     const polygTopL = useRef<SVGPolygonElement>(null);
