@@ -1,6 +1,6 @@
 
 import './App.css'
-// import Header from './components/Header/Header.tsx';
+import Header from './components/Header/Header.tsx';
 // import Button from './components/Button/Button.tsx';
 // import ProjectCard from './components/Card/ProjectCard.tsx';
 // import SkillCard from './components/Card/SkillCard.tsx';
@@ -10,7 +10,7 @@ function App() {
 
   return (
     <>
-      {/* <Header /> */}
+      <Header />
 
       {/* Buttons components examples bellow */}
 

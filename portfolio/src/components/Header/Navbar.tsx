@@ -78,9 +78,9 @@ const Navbar = () => {
                 <div className="w-[110px] h-[60px] bg-[url('/assets/logo/light-logo.svg')] bg-contain bg-no-repeat">
                 </div>
                 <div className="nav-links">
-                    <a className="about" href="#About"><SvgButton className="absolute w-[120px] top-[-31.5px] right-[300px] z-[-1]"></SvgButton><span className="z-2" ref={btnText[0]}>About</span></a>
-                    <a className="projects" href="#Projects"><SvgButton className="absolute w-[120px] top-[-31.5px] right-[160px] z-[-1]"></SvgButton><span ref={btnText[1]}>Projects</span></a>
-                    <a className="contact" href="#Contact"><SvgButton className="absolute w-[120px] top-[-31.5px] right-[20px] z-[-1]"></SvgButton><span ref={btnText[2]}>Contact</span></a>
+                    <a className="about" href="#About"><SvgButton className="absolute w-[120px] top-[-31.5px] right-[300px] z-[1]"></SvgButton><span className="z-[2] sticky" ref={btnText[0]}>About</span></a>
+                    <a className="projects" href="#Projects"><SvgButton className="absolute w-[120px] top-[-31.5px] right-[160px] z-[1]"></SvgButton><span className="z-[2] sticky" ref={btnText[1]}>Projects</span></a>
+                    <a className="contact" href="#Contact"><SvgButton className="absolute w-[120px] top-[-31.5px] right-[20px] z-[1]"></SvgButton><span className="z-[2] sticky" ref={btnText[2]}>Contact</span></a>
                 </div>
             </div>
         </>
