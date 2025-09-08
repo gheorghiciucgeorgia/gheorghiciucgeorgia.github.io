@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import { useState, useRef } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import "./Header.css";
@@ -68,27 +68,27 @@ const MobileMenu: React.FC = () => {
   return (
     <>
 
-      <div className="flex flex-row items-center align-center justify-between p-4 z-100 absolute w-full">
+      <div className="flex flex-row items-center align-center justify-between p-4 absolute w-full">
         {/* Hamburger */}
-        <div className="cursor-pointer flex flex-col gap-1.5 burger-menu" onClick={() => setIsOpen(!isOpen)}>
+        <div className="cursor-pointer flex flex-col gap-1.5 burger-menu z-4" onClick={() => setIsOpen(!isOpen)}>
           <div ref={burgerTop} className="w-6 h-1 rounded-[10px] origin-left bg-[var(--secondary-color-variation)]"></div>
           <div ref={burgerMiddle} className="w-6 h-1 rounded-[10px] bg-[var(--secondary-color-variation)]"></div>
           <div ref={burgerBottom} className="w-6 h-1 rounded-[10px] origin-left bg-[var(--secondary-color-variation)]"></div>
         </div>
-        <div className="w-[110px] h-[60px] bg-[url('/assets/logo/light-logo.svg')] bg-contain bg-no-repeat">
+        <div className="w-[110px] h-[60px] bg-[url('/assets/logo/light-logo.svg')] bg-contain bg-no-repeat z-1">
         </div>
         <div></div>
       </div>
 
       {/* Background Panels */}
-      <div className="w-[356px] h-[757px] overflow-hidden fixed inset-0 pointer-events-none bgk-panels">
+      <div className="w-[356px] h-[757px] overflow-hidden fixed inset-0 pointer-events-none z-2 bgk-panels">
         <div ref={panel1Ref} className="absolute inset-0 h-[757px] bg-[var(--secondary-color)]"></div>
         <div ref={panel2Ref} className="absolute inset-0 h-[757px] bg-[var(--secondary-color)]"></div>
         <div ref={panel3Ref} className="absolute inset-0 h-[757px] bg-[var(--secondary-color)]"></div>
       </div>
 
       {/* Mobile Menu */}
-      <div ref={menuRef} className="text-[20pt] fixed top-[50px] left-[25px] w-[356px] h-[757px] bg-none text-white p-8 hidden menuRef">
+      <div ref={menuRef} className="text-[20pt] fixed top-[50px] left-[25px] w-[356px] h-[757px] bg-none text-white p-8 hidden menuRef z-3">
         <div className="flex flex-col">
           <div ref={line} className="w-[5px] h-[500px] top-[-50px] left-[-3px] bg-[#AEFF00] absolute"></div>
           <i ref={barCode} className="cybg-barcode cybg text-[150pt] absolute rotate-270 top-[450px] left-[-94px]" style={{ color: "var(--accent-color)" }}></i>
