@@ -12,6 +12,7 @@ const Header = () => {
   const svgRef2 = useRef<SVGSVGElement>(null);
   const glitchNameRef = useRef<HTMLDivElement>(null);
   const beadRef = useRef<HTMLDivElement>(null);
+  const tunnelRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
 
@@ -132,6 +133,7 @@ const Header = () => {
     });
 
     gsap.fromTo(beadRef.current, { scale: 0 }, { scale: 1, delay: 4, duration: 1, ease: "power2.out" });
+    gsap.fromTo(tunnelRef.current, { scale: 0 }, { scale: 1, delay: 4, duration: 1, ease: "power2.out" });
 
   }, []);
 
@@ -318,7 +320,7 @@ const Header = () => {
     );
   }
   return (
-    <div className='w-full h-full bg-[var(--primary-color)]'>
+    <div className='w-full bg-[var(--primary-color)] after:bg-[linear-gradient(180deg,transparent,#000)] after:bottom-[-110px] after:h-[302px] after:absolute after:w-full'>
       <div className='menu'>
         {/* MobileMenu doar pe mobil */}
         <div className="block lg:hidden">
@@ -331,15 +333,17 @@ const Header = () => {
         </div>
       </div>
 
-      <div className='header h-full overflow-hidden'>
+      <div className='header h-[760px] overflow-hidden'>
         <div ref={beadRef} className="w-[300px] h-[300px] bg-[url('/assets/background/bead.svg')] bg-contain bg-no-repeat absolute top-[10%] right-[30%]">
         </div>
-        <div className='flex justify-between items-center h-full transform -translate-y-31'>
+        <div ref={tunnelRef} className="w-[300px] h-[300px] bg-[url('/assets/background/tunnel_void_retro.svg')] bg-contain bg-no-repeat absolute top-[65%] right-[50%]">
+        </div>
+        <div className='flex justify-between items-center h-auto transform -translate-y-31'>
           {renderFrame()}
           <div className='glitch-name paused font-medium flex flex-col text-center' ref={glitchNameRef}>
-            <h2 className="hero glitch layers" data-text="GHEORGHICIUC"><span>GHEORGHICIUC</span></h2>
-            <h2 className="hero glitch layers" data-text="GEORGIA"><span>GEORGIA</span></h2>
-            <p className='hero glitch layers text-custom' data-text="Front-end Developer"><span>Front-end Developer</span></p>
+            <h2 className="hero glitch layers" data-text="GHEORGHICIUC"><span className="select-none cursor-default">GHEORGHICIUC</span></h2>
+            <h2 className="hero glitch layers" data-text="GEORGIA"><span className="select-none cursor-default">GEORGIA</span></h2>
+            <p className='hero glitch layers text-custom' data-text="Front-end Developer"><span className="select-none cursor-default">Front-end Developer</span></p>
           </div>
           {renderFrame2()}
         </div>
