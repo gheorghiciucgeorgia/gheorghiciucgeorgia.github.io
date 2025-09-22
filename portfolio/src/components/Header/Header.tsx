@@ -147,7 +147,7 @@ const Header = () => {
         x="0px"
         y="0px"
         viewBox="132 2 230 500"
-        className='sm:h-[400px] lg:h-[880px]'
+        className='w-1/2 h-auto -translate-y-[15vw] lg:-translate-y-0 lg:h-auto lg:w-auto rotate-90 lg:rotate-0 xl:translate-y-0 xl:h-[880px]'
       >
         <defs>
           <clipPath id="cropPath">
@@ -244,7 +244,7 @@ const Header = () => {
         x="0px"
         y="0px"
         viewBox="138 2 230 500"
-        className='sm:h-[400px] lg:h-[880px] relative'
+        className='w-1/2 h-auto translate-y-[15vw] lg:translate-y-0 lg:h-auto lg:w-auto rotate-90 lg:rotate-0 xl:translate-y-0 xl:h-[880px]'
       >
         <style type="text/css">
           {
@@ -320,7 +320,7 @@ const Header = () => {
     );
   }
   return (
-    <div className='w-full bg-[var(--primary-color)] after:bg-[linear-gradient(180deg,transparent,var(--primary-color))] sm:after:bottom-[130px] sm:after:h-[50px] lg:after:bottom-[-120px] lg:after:h-[100px] after:absolute after:w-full'>
+    <div className='w-full bg-[var(--primary-color)]'>
       <div className='menu'>
         {/* MobileMenu doar pe mobil */}
         <div className="block lg:hidden">
@@ -333,12 +333,12 @@ const Header = () => {
         </div>
       </div>
 
-      <div className='header h-[760px] overflow-hidden relative'>
-        <div ref={beadRef} className="sm:w-[100px] sm:h-[100px] sm:top-[15%] sm:right-[30%] lg:w-[300px] lg:h-[300px] lg:top-[10%] lg:right-[30%] bg-[url('/assets/background/bead.svg')] bg-contain bg-no-repeat absolute">
+      <div className='header h-auto xl:h-[760px] overflow-hidden relative'>
+        <div ref={beadRef} className="w-[100px] h-[100px] top-[28%] right-[20%] lg:w-[200px] lg:h-[200px] lg:top-[8%] lg:right-[30%] xl:w-[300px] xl:h-[300px] bg-[url('/assets/background/bead.svg')] bg-contain bg-no-repeat absolute">
         </div>
-        <div ref={tunnelRef} className="sm:w-[100px] sm:h-[100px] sm:top-[45%] sm:right-[50%] lg:w-[300px] lg:h-[300px] lg:top-[65%] lg:right-[50%] bg-[url('/assets/background/tunnel_void_retro.svg')] bg-contain bg-no-repeat absolute">
+        <div ref={tunnelRef} className="w-[100px] h-[100px] top-[40%] right-[70%] lg:w-[180px] lg:h-[180px] lg:top-[65%] lg:right-[50%] xl:w-[300px] xl:h-[300px] xl:top-[55%] xl:right-[47%] bg-[url('/assets/background/tunnel_void_retro.svg')] bg-contain bg-no-repeat absolute">
         </div>
-        <div className='flex justify-between items-center h-auto transform sm:-translate-y-[-20%] lg:-translate-y-31'>
+        <div className='flex flex-col justify-center lg:justify-between lg:flex-row items-center h-auto -translate-y-[28vw] lg:-translate-y-0 xl:-translate-y-31'>
           {renderFrame()}
           <div className='glitch-name paused font-medium flex flex-col text-center' ref={glitchNameRef}>
             <h2 className="hero glitch layers" data-text="GHEORGHICIUC"><span className="select-none cursor-default">GHEORGHICIUC</span></h2>
