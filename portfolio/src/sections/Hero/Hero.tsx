@@ -331,6 +331,7 @@ const Hero = () => {
             <h2 className="hero glitch layers" data-text="GHEORGHICIUC"><span className="select-none cursor-default">GHEORGHICIUC</span></h2>
             <h2 className="hero glitch layers" data-text="GEORGIA"><span className="select-none cursor-default">GEORGIA</span></h2>
             <p className='hero glitch layers text-custom' data-text="Front-end Developer"><span className="select-none cursor-default">Front-end Developer</span></p>
+            <p className='hero tagline' data-text="Crafting interfaces from the neon grid"><span className="select-none cursor-default">Crafting interfaces from the neon grid</span></p>
           </div>
           {renderFrame2()}
         </div>
