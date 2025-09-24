@@ -17,11 +17,11 @@ const AboutMe = () => {
     }, []);
 
     return (
-        <div className='aboutMe-section w-full bg-[var(--secondary-color)] flex flex-row justify-between items-center py-[3vw] px-[7vw]' id="About">
+        <div className='aboutMe-section w-full bg-[var(--secondary-color)] flex flex-row justify-between items-center py-[1vw] px-[7vw] relative' id="About">
             <div className='flex flex-col items-center justify-between h-auto w-[45%]'>
                 <div className='flex flex-row items-center w-full justify-between'>
                     <div className='w-[20px] h-[20px]'></div>
-                    <i className="cybg-flower-09 cybg text-[50px] text-[var(--accent-color)]"></i>
+                    <i className="cybg-flower-09 cybg text-[30px] text-[var(--accent-color)]"></i>
                 </div>
                 <div className="wrapper">
                     <div className="sphere">
@@ -31,7 +31,7 @@ const AboutMe = () => {
                     </div>
                 </div>
                 <div className='flex flex-row items-center justify-between w-full'>
-                    <i className="cybg-flower-09 cybg text-[50px] text-[var(--accent-color)]"></i>
+                    <i className="cybg-flower-09 cybg text-[30px] text-[var(--accent-color)]"></i>
                     <div className='w-[20px] h-[20px]'></div>
                 </div>
             </div>
