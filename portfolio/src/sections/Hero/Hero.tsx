@@ -27,18 +27,7 @@ const Hero = () => {
       const length = Math.hypot(x2 - x1, y2 - y1);
       line.setAttribute('stroke-dasharray', length.toString());
       line.setAttribute('stroke-dashoffset', length.toString());
-      gsap.to(line, { strokeDashoffset: 0, duration: 1, delay: 1 });
-    });
-    const verticalLinesLeft = svgRef.current.querySelectorAll('.vertical-line-left');
-    verticalLinesLeft.forEach(line => {
-      const x1 = parseFloat((line as SVGLineElement).getAttribute('x1') || '0');
-      const x2 = parseFloat((line as SVGLineElement).getAttribute('x2') || '0');
-      const y1 = parseFloat((line as SVGLineElement).getAttribute('y1') || '0');
-      const y2 = parseFloat((line as SVGLineElement).getAttribute('y2') || '0');
-      const length = Math.hypot(x2 - x1, y2 - y1);
-      line.setAttribute('stroke-dasharray', length.toString());
-      line.setAttribute('stroke-dashoffset', length.toString());
-      gsap.to(line, { strokeDashoffset: 0, duration: 1, delay: 1 });
+      gsap.to(line, { strokeDashoffset: 0, duration: 0.8, delay: 1.5 });
     });
 
     const horizontalLinesRight = svgRef.current.querySelectorAll('.horizontal-line-right');
@@ -53,9 +42,23 @@ const Hero = () => {
       gsap.fromTo(
         line,
         { strokeDashoffset: length },
-        { strokeDashoffset: 0, duration: 1, delay: 2 }
+        { strokeDashoffset: 0, duration: 0.8, delay: 2.2 }
       );
     });
+
+    const verticalLinesLeft = svgRef.current.querySelectorAll('.vertical-line-left');
+    verticalLinesLeft.forEach(line => {
+      const x1 = parseFloat((line as SVGLineElement).getAttribute('x1') || '0');
+      const x2 = parseFloat((line as SVGLineElement).getAttribute('x2') || '0');
+      const y1 = parseFloat((line as SVGLineElement).getAttribute('y1') || '0');
+      const y2 = parseFloat((line as SVGLineElement).getAttribute('y2') || '0');
+      const length = Math.hypot(x2 - x1, y2 - y1);
+      line.setAttribute('stroke-dasharray', length.toString());
+      line.setAttribute('stroke-dashoffset', length.toString());
+      gsap.to(line, { strokeDashoffset: 0, duration: 0.9, delay: 1 });
+    });
+
+
     const verticalLinesRight = svgRef.current.querySelectorAll('.vertical-line-right');
     verticalLinesRight.forEach(line => {
       const x1 = parseFloat((line as SVGLineElement).getAttribute('x1') || '0');
@@ -68,7 +71,7 @@ const Hero = () => {
       gsap.fromTo(
         line,
         { strokeDashoffset: length },
-        { strokeDashoffset: 0, duration: 1, delay: 1 }
+        { strokeDashoffset: 0, duration: 0.9, delay: 1 }
       );
     });
 
@@ -83,8 +86,17 @@ const Hero = () => {
       const length = Math.hypot(x2 - x1, y2 - y1);
       line.setAttribute('stroke-dasharray', length.toString());
       line.setAttribute('stroke-dashoffset', length.toString());
-      gsap.to(line, { strokeDashoffset: 0, duration: 1, delay: 2 });
+      gsap.to(line, { strokeDashoffset: 0, duration: 0.8, delay: 2.2 });
     });
+
+    const horizontalPathsRight2 = svgRef2.current.querySelectorAll('.horizontal-line-right');
+    horizontalPathsRight2.forEach(path => {
+      const length = (path as SVGPathElement).getTotalLength();
+      path.setAttribute('stroke-dasharray', length.toString());
+      path.setAttribute('stroke-dashoffset', length.toString());
+      gsap.to(path, { strokeDashoffset: 0, duration: 0.8, delay: 1.5 });
+    });
+
     const verticalLinesLeft2 = svgRef2.current.querySelectorAll('.vertical-line-left');
     verticalLinesLeft2.forEach(line => {
       const x1 = parseFloat((line as SVGLineElement).getAttribute('x1') || '0');
@@ -94,15 +106,9 @@ const Hero = () => {
       const length = Math.hypot(x2 - x1, y2 - y1);
       line.setAttribute('stroke-dasharray', length.toString());
       line.setAttribute('stroke-dashoffset', length.toString());
-      gsap.to(line, { strokeDashoffset: 0, duration: 1, delay: 1 });
+      gsap.to(line, { strokeDashoffset: 0, duration: 0.9, delay: 1 });
     });
-    const horizontalPathsRight2 = svgRef2.current.querySelectorAll('.horizontal-line-right');
-    horizontalPathsRight2.forEach(path => {
-      const length = (path as SVGPathElement).getTotalLength();
-      path.setAttribute('stroke-dasharray', length.toString());
-      path.setAttribute('stroke-dashoffset', length.toString());
-      gsap.to(path, { strokeDashoffset: 0, duration: 1, delay: 1 });
-    });
+
     const verticalLinesRight2 = svgRef2.current.querySelectorAll('.vertical-line-right');
     verticalLinesRight2.forEach(line => {
       const x1 = parseFloat((line as SVGLineElement).getAttribute('x1') || '0');
@@ -115,13 +121,13 @@ const Hero = () => {
       gsap.fromTo(
         line,
         { strokeDashoffset: length },
-        { strokeDashoffset: 0, duration: 1, delay: 1 }
+        { strokeDashoffset: 0, duration: 0.9, delay: 1 }
       );
     });
 
     // ANIMATION FOR THE NAME iN THE MIDDLE
     gsap.fromTo(glitchNameRef.current, { scale: 0 }, {
-      scale: 1, delay: 2, duration: 1, ease: "power2.out", onComplete: () => {
+      scale: 1, delay: 2.2, duration: 1, ease: "power2.out", onComplete: () => {
         // remove the paused class so the existing CSS glitch animations start
         glitchNameRef.current?.classList.remove('paused');
         // fallback: explicitly set play state to running
@@ -136,196 +142,125 @@ const Hero = () => {
 
   }, []);
 
-  const renderFrame2 = () => {
-    return (
-      <svg
-        ref={svgRef2}
-        id="Layer_1"
-        xmlns="http://www.w3.org/2000/svg"
-        xmlnsXlink="http://www.w3.org/1999/xlink"
-        x="0px"
-        y="0px"
-        viewBox="132 2 230 500"
-        className='w-1/2 h-auto -translate-y-[15vw] lg:-translate-y-0 lg:h-auto lg:w-auto rotate-90 lg:rotate-0 xl:translate-y-0 xl:h-[880px]'
-      >
-        <defs>
-          <clipPath id="cropPath">
-            <rect x={139} y={1.5} width={222} height={497.1} />
-          </clipPath>
-        </defs>
-        <style type="text/css">
-          {
-            "\n    .st0{clip-path:url(#SVGID_00000177464080929556033840000001837667864315637937_);}\n\t.st1{fill:none;stroke:" + colorFrame + ";stroke-width:2;stroke-miterlimit:10;}\n\t.st2{fill:none;stroke:" + colorFrame + ";stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}\n\t.st3{fill:none;stroke:" + colorFrame + ";stroke-width:2;stroke-linejoin:round;stroke-miterlimit:10;}\n  "
-          }
-        </style>
-        <g>
-          <g>
-            <g>
-              <defs>
-                <rect id="SVGID_1_" x={139} width={222} height={500} />
-              </defs>
-              <clipPath id="SVGID_00000142160302739099515810000011842944994810893704_">
-                <use
-                  xlinkHref="#SVGID_1_"
-                  style={{
-                    overflow: "visible",
-                  }}
-                />
-              </clipPath>
-              <g
-                style={{
-                  clipPath:
-                    "url(#SVGID_00000142160302739099515810000011842944994810893704_)",
-                }}
-              >
-                <g>
-                  <line className="st1 horizontal-line-left" x1={236.6} y1={455.8} x2={-30.3} y2={455.8} />
-                  <line className="st1 horizontal-line-left" x1={236.6} y1={410.5} x2={-30.3} y2={410.5} />
-                  <line className="st1 horizontal-line-left" x1={236.6} y1={365.1} x2={-30.3} y2={365.1} />
-                  <line className="st1 horizontal-line-left" x1={236.6} y1={319.8} x2={-30.3} y2={319.8} />
-                  <line className="st1 horizontal-line-left" x1={236.6} y1={274.4} x2={-30.3} y2={274.4} />
-                  <line className="st1 horizontal-line-left" x1={236.6} y1={229.1} x2={-30.3} y2={229.1} />
-                  <line className="st1 horizontal-line-left" x1={236.6} y1={183.7} x2={-30.3} y2={183.7} />
-                  <line className="st1 horizontal-line-left" x1={236.6} y1={138.4} x2={-30.3} y2={138.4} />
-                  <line className="st1 horizontal-line-left" x1={236.6} y1={93} x2={-30.3} y2={93} />
-                  <line className="st1 horizontal-line-left" x1={236.6} y1={47.7} x2={-30.3} y2={47.7} />
-
-                  <line className="st1 vertical-line-left" x1={-6} y1={2.3} x2={-6} y2={501.2} />
-                  <line className="st1 vertical-line-left" x1={18.2} y1={2.3} x2={18.2} y2={501.2} />
-                  <line className="st1 vertical-line-left" x1={42.5} y1={2.3} x2={42.5} y2={501.2} />
-                  <line className="st1 vertical-line-left" x1={66.8} y1={2.3} x2={66.8} y2={501.2} />
-                  <line className="st1 vertical-line-left" x1={91} y1={2.3} x2={91} y2={501.2} />
-                  <line className="st1 vertical-line-left" x1={115.3} y1={2.3} x2={115.3} y2={501.2} />
-                  <line className="st1 vertical-line-left" x1={139.5} y1={2.3} x2={139.5} y2={501.2} />
-                  <line className="st1 vertical-line-left" x1={163.8} y1={2.3} x2={163.8} y2={501.2} />
-                  <line className="st1 vertical-line-left" x1={188.1} y1={2.3} x2={188.1} y2={501.2} />
-                  <line className="st1 vertical-line-left" x1={212.3} y1={2.3} x2={212.3} y2={501.2} />
-                  <line className="st1 vertical-line-left" x1={237} y1={2.3} x2={237} y2={501.2} />
-                </g>
-
-                <g>
-                  <path className="st1 horizontal-line-right" d="M503.2 629 L236.5 456" />
-                  <path className="st1 horizontal-line-right" d="M503.2 545.2 L236.5 410.6" />
-                  <path className="st1 horizontal-line-right" d="M503.2 461.3 L236.5 365.2" />
-                  <path className="st1 horizontal-line-right" d="M503.2 377.5 L236.5 319.8" />
-                  <path className="st1 horizontal-line-right" d="M503.2 293.7 L236.5 274.4" />
-                  <path className="st1 horizontal-line-right" d="M503.2 209.8 L236.5 229.1" />
-                  <path className="st1 horizontal-line-right" d="M503.2 126 L236.5 183.7" />
-                  <path className="st1 horizontal-line-right" d="M503.2 42.2 L236.5 138.3" />
-                  <path className="st1 horizontal-line-right" d="M503.2 -41.7 L236.5 92.9" />
-                  <path className="st1 horizontal-line-right" d="M503.2 -125.5 L236.5 47.5" />
-                  <line className="st1 vertical-line-right" x1={461.7} y1={-176.4} x2={461.7} y2={679.9} />
-                  <line className="st1 vertical-line-right" x1={425.6} y1={-147.8} x2={425.6} y2={651.3} />
-                  <line className="st1 vertical-line-right" x1={394.1} y1={-122.8} x2={394.1} y2={626.3} />
-                  <line className="st1 vertical-line-right" x1={366.3} y1={-100.7} x2={366.3} y2={604.2} />
-                  <line className="st1 vertical-line-right" x1={341.6} y1={-81.1} x2={341.6} y2={584.6} />
-                  <line className="st1 vertical-line-right" x1={319.5} y1={-63.6} x2={319.5} y2={567.1} />
-                  <line className="st1 vertical-line-right" x1={299.6} y1={-47.8} x2={299.6} y2={551.3} />
-                  <line className="st1 vertical-line-right" x1={281.5} y1={-33.6} x2={281.5} y2={537.1} />
-                  <line className="st1 vertical-line-right" x1={265.2} y1={-20.6} x2={265.2} y2={524.1} />
-                  <line className="st1 vertical-line-right" x1={250.2} y1={-8.7} x2={250.2} y2={512.2} />
-                  <line className="st1 vertical-line-right" x1={250.2} y1={-8.7} x2={250.2} y2={512.2} />
-                </g>
-              </g>
-            </g>
-          </g>
-        </g>
-      </svg>
-    );
-  }
   const renderFrame = () => {
     return (
       <svg
         ref={svgRef}
-        id="Layer_1"
+        id="Layer_2_00000174584782125848767320000012045513605021553799_"
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
         x="0px"
         y="0px"
-        viewBox="138 2 230 500"
-        className='w-1/2 h-auto translate-y-[15vw] lg:translate-y-0 lg:h-auto lg:w-auto rotate-90 lg:rotate-0 xl:translate-y-0 xl:h-[880px]'
+        viewBox="0 0 222 450"
+        className='w-1/2 h-auto rotate-90 border-l-2 border-l-[var(--secondary-color)] lg:w-auto lg:rotate-0 lg:border-none'
       >
         <style type="text/css">
           {
-            "\n    .st0{clip-path:url(#SVGID_00000177464080929556033840000001837667864315637937_);}\n\t.st1{fill:none;stroke:" + colorFrame + ";stroke-width:2;stroke-miterlimit:10;}\n\t.st2{fill:none;stroke:" + colorFrame + ";stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}\n\t.st3{fill:none;stroke:" + colorFrame + ";stroke-width:2;stroke-linejoin:round;stroke-miterlimit:10;}\n  "
+            "\n\t.st0{fill:none;stroke:" + colorFrame + ";stroke-width:2;stroke-miterlimit:10;}\n"
           }
         </style>
-        <g>
-          <g>
-            <g>
-              <defs>
-                <rect id="SVGID_1_" x={139} y={0} width={222} height={500} />
-              </defs>
-              <clipPath id="SVGID_00000095335815526420234590000009184848449787247023_">
-                <use
-                  xlinkHref="#SVGID_1_"
-                  style={{
-                    overflow: "visible",
-                  }}
-                />
-              </clipPath>
-              <g
-                style={{
-                  clipPath:
-                    "url(#SVGID_00000095335815526420234590000009184848449787247023_)",
-                }}
-              >
-                <g>
-                  <line className="st1 horizontal-line-right" x2={530.3} y1={455.8} x1={263.4} y2={455.8} />
-                  <line className="st1 horizontal-line-right" x2={530.3} y1={410.5} x1={263.4} y2={410.5} />
-                  <line className="st1 horizontal-line-right" x2={530.3} y1={365.1} x1={263.4} y2={365.1} />
-                  <line className="st1 horizontal-line-right" x2={530.3} y1={319.8} x1={263.4} y2={319.8} />
-                  <line className="st1 horizontal-line-right" x2={530.3} y1={274.4} x1={263.4} y2={274.4} />
-                  <line className="st1 horizontal-line-right" x2={530.3} y1={229.1} x1={263.4} y2={229.1} />
-                  <line className="st1 horizontal-line-right" x2={530.3} y1={183.7} x1={263.4} y2={183.7} />
-                  <line className="st1 horizontal-line-right" x2={530.3} y1={138.4} x1={263.4} y2={138.4} />
-                  <line className="st1 horizontal-line-right" x2={530.3} y1={93} x1={263.4} y2={93} />
-                  <line className="st1 horizontal-line-right" x2={530.3} y1={47.7} x1={263.4} y2={47.7} />
+        <line className="st0 vertical-line-right" x1={221} y2={500} x2={221} y1={-0.1} />
+        <line className="st0 vertical-line-right" x1={197} y2={500} x2={197} y1={-0.9} />
+        <line className="st0 vertical-line-right" x1={172.7} y2={500} x2={172.7} y1={0} />
+        <line className="st0 vertical-line-right" x1={148.4} y2={500} x2={148.4} y1={0} />
+        <line className="st0 vertical-line-right" x1={124.2} y2={500.5} x2={124.2} y1={0.5} />
 
-                  <line className="st1 vertical-line-right" x1={360.5} y2={501.2} x2={360.5} y1={2.3} />
-                  <line className="st1 vertical-line-right" x1={336.2} y2={501.2} x2={336.2} y1={2.3} />
-                  <line className="st1 vertical-line-right" x1={311.9} y2={501.2} x2={311.9} y1={2.3} />
-                  <line className="st1 vertical-line-right" x1={287.7} y2={501.2} x2={287.7} y1={2.3} />
-                </g>
-                <g>
-                  <line className="st1 horizontal-line-left" x1={-3.2} y1={629} x2={263.5} y2={456} />
-                  <line className="st1 horizontal-line-left" x1={-3.2} y1={545.2} x2={263.5} y2={410.6} />
-                  <line className="st1 horizontal-line-left" x1={-3.2} y1={461.3} x2={263.5} y2={365.2} />
-                  <line className="st1 horizontal-line-left" x1={-3.2} y1={377.5} x2={263.5} y2={319.8} />
-                  <line className="st1 horizontal-line-left" x1={-3.2} y1={293.7} x2={263.5} y2={274.4} />
-                  <line className="st1 horizontal-line-left" x1={-3.2} y1={209.8} x2={263.5} y2={229.1} />
-                  <line className="st1 horizontal-line-left" x1={-3.2} y1={126} x2={263.5} y2={183.7} />
-                  <line className="st1 horizontal-line-left" x1={-3.2} y1={42.2} x2={263.5} y2={138.3} />
-                  <line className="st1 horizontal-line-left" x1={-3.2} y1={-41.7} x2={263.5} y2={92.9} />
-                  <line className="st1 horizontal-line-left" x1={-3.2} y1={-125.5} x2={263.5} y2={47.5} />
+        <line className="st0 vertical-line-left" x1={110.4} y2={500} x2={110.4} y1={0.3} />
+        <line className="st0 vertical-line-left" x1={95.1} y2={500} x2={95.1} y1={-0.9} />
+        <line className="st0 vertical-line-left" x1={61.1} y2={500} x2={61.1} y1={-0.1} />
+        <line className="st0 vertical-line-left" x1={78.1} y2={500} x2={78.1} y1={-0.1} />
+        <line className="st0 vertical-line-left" x1={41.3} y2={501.1} x2={41.3} y1={-0.9} />
+        <line className="st0 vertical-line-left" x1={19.2} y2={501.1} x2={19.2} y1={0} />
 
-                  <line className="st1 vertical-line-left" x1={38.3} y2={679.9} x2={38.3} y1={-176.4} />
-                  <line className="st1 vertical-line-left" x1={74.4} y2={651.3} x2={74.4} y1={-147.8} />
-                  <line className="st1 vertical-line-left" x1={105.9} y2={626.3} x2={105.9} y1={-122.8} />
-                  <line className="st1 vertical-line-left" x1={133.7} y2={604.2} x2={133.7} y1={-100.7} />
-                  <line className="st1 vertical-line-left" x1={158.4} y2={584.6} x2={158.4} y1={-81.1} />
-                  <line className="st1 vertical-line-left" x1={180.5} y2={567.1} x2={180.5} y1={-63.6} />
-                  <line className="st1 vertical-line-left" x1={200.4} y2={551.3} x2={200.4} y1={-47.8} />
-                  <line className="st1 vertical-line-left" x1={218.5} y2={537.1} x2={218.5} y1={-33.6} />
-                  <line className="st1 vertical-line-left" x1={234.8} y2={524.1} x2={234.8} y1={-20.6} />
-                  <line className="st1 vertical-line-left" x1={249.8} y2={512.2} x2={249.8} y1={-8.7} />
-                  <line className="st1 vertical-line-left" x1={263} y2={512.2} x2={263} y1={-8.7} />
-                </g>
-              </g>
-            </g>
-          </g>
-        </g>
+        <line className="st0 horizontal-line-right " x2={221} y1={47.7} x1={124.2} y2={47.7} />
+        <line className="st0 horizontal-line-right" x2={221} y1={93} x1={124.3} y2={92.9} />
+        <line className="st0 horizontal-line-right" x2={221} y1={138.5} x1={124.3} y2={138.3} />
+        <line className="st0 horizontal-line-right" x2={220.1} y1={183.8} x1={123.3} y2={183.6} />
+        <line className="st0 horizontal-line-right" x2={221.1} y1={229.2} x1={124.3} y2={229.1} />
+        <line className="st0 horizontal-line-right" x2={220} y1={274.5} x1={123.2} y2={274.4} />
+        <line className="st0 horizontal-line-right" x2={219.9} y1={319.9} x1={123.2} y2={319.7} />
+        <line className="st0 horizontal-line-right" x2={221} y1={365.2} x1={124.3} y2={365} />
+        <line className="st0 horizontal-line-right" x2={220.1} y1={410.6} x1={123.3} y2={410.4} />
+        <line className="st0 horizontal-line-right" x2={220.9} y1={455.9} x1={124.2} y2={455.7} />
+        <line className="st0 horizontal-line-right" x2={221.1} y1={320.4} x1={124.3} y2={320.3} />
+
+        <line className="st0 horizontal-line-left" x1={53.6} y1={501.1} x2={124.2} y2={455.7} />
+        <line className="st0 horizontal-line-left" x1={-1.3} y1={473.9} x2={123.3} y2={411.4} />
+        <line className="st0 horizontal-line-left" x1={-1.8} y1={409.6} x2={124.3} y2={365} />
+        <line className="st0 horizontal-line-left" x1={-1.9} y1={346.1} x2={123.2} y2={319.7} />
+        <line className="st0 horizontal-line-left" x1={-0.2} y1={284.4} x2={123.2} y2={274.4} />
+        <line className="st0 horizontal-line-left" x1={-0.2} y1={220} x2={124.3} y2={229.1} />
+        <line className="st0 horizontal-line-left" x1={-2.7} y1={156} x2={123.3} y2={183.6} />
+        <line className="st0 horizontal-line-left" x1={-3.3} y1={92.7} x2={124.3} y2={138.3} />
+        <line className="st0 horizontal-line-left" x1={-2.9} y1={28.3} x2={124.3} y2={92.9} />
+        <line className="st0 horizontal-line-left" x1={47.5} y1={-2} x2={124.2} y2={47.7} />
       </svg>
     );
   }
+
+  const renderFrame2 = () => {
+    return (
+      <svg
+        ref={svgRef2}
+        id="Layer_2"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlnsXlink="http://www.w3.org/1999/xlink"
+        x="0px"
+        y="0px"
+        viewBox="0 0 222 450"
+        className='w-1/2 h-auto lg:w-auto rotate-90 lg:rotate-0'
+      >
+        <style type="text/css">
+          {
+            "\n\t.st0{fill:none;stroke:" + colorFrame + ";stroke-width:2;stroke-miterlimit:10;}\n"
+          }
+        </style>
+        <line className="st0 vertical-line-left" x1={24.8} y1={-0.9} x2={24.8} y2={500} />
+        <line className="st0 vertical-line-left" x1={49.1} y1={0} x2={49.1} y2={500} />
+        <line className="st0 vertical-line-left" x1={73.4} y1={0} x2={73.4} y2={500} />
+        <line className="st0 vertical-line-left" x1={97.6} y1={0.5} x2={97.6} y2={500.5} />
+        <line className="st0 vertical-line-left" x1={0.8} y1={-0.1} x2={0.8} y2={500} />
+
+        <line className="st0 vertical-line-right" x1={111.4} y1={0.3} x2={111.4} y2={500} />
+        <line className="st0 vertical-line-right" x1={126.7} y1={-0.9} x2={126.7} y2={500} />
+        <line className="st0 vertical-line-right" x1={160.7} y1={-0.1} x2={160.7} y2={500} />
+        <line className="st0 vertical-line-right" x1={143.7} y1={-0.1} x2={143.7} y2={500} />
+        <line className="st0 vertical-line-right" x1={180.5} y1={-0.9} x2={180.5} y2={501.1} />
+        <line className="st0 vertical-line-right" x1={202.6} y1={0} x2={202.6} y2={501.1} />
+
+        <line className="st0 horizontal-line-left" x1={97.6} y1={47.7} x2={0.8} y2={47.7} />
+        <line className="st0 horizontal-line-left" x1={97.5} y1={92.9} x2={0.8} y2={93} />
+        <line className="st0 horizontal-line-left" x1={97.5} y1={138.3} x2={0.8} y2={138.5} />
+        <line className="st0 horizontal-line-left" x1={98.5} y1={183.6} x2={1.7} y2={183.8} />
+        <line className="st0 horizontal-line-left" x1={97.5} y1={229.1} x2={0.7} y2={229.2} />
+        <line className="st0 horizontal-line-left" x1={98.6} y1={274.4} x2={1.8} y2={274.5} />
+        <line className="st0 horizontal-line-left" x1={98.6} y1={319.7} x2={1.9} y2={319.9} />
+        <line className="st0 horizontal-line-left" x1={97.5} y1={365} x2={0.8} y2={365.2} />
+        <line className="st0 horizontal-line-left" x1={98.5} y1={410.4} x2={1.7} y2={410.6} />
+        <line className="st0 horizontal-line-left" x1={97.6} y1={455.7} x2={0.9} y2={455.9} />
+        <line className="st0 horizontal-line-left" x1={97.5} y1={320.3} x2={0.7} y2={320.4} />
+
+        <path className="st0 horizontal-line-right" d="M168.2 501.1 L97.6 455.7" />
+        <path className="st0 horizontal-line-right" d="M223.1 473.9 L98.5 411.4" />
+        <path className="st0 horizontal-line-right" d="M223.6 409.6 L97.5 365" />
+        <path className="st0 horizontal-line-right" d="M223.7 346.1 L98.6 319.7" />
+        <path className="st0 horizontal-line-right" d="M222 284.4 L98.6 274.4" />
+        <path className="st0 horizontal-line-right" d="M222 220 L97.5 229.1" />
+        <path className="st0 horizontal-line-right" d="M224.5 156 L98.5 183.6" />
+        <path className="st0 horizontal-line-right" d="M225.1 92.7 L97.5 138.3" />
+        <path className="st0 horizontal-line-right" d="M224.7 28.3 L97.5 92.9" />
+        <path className="st0 horizontal-line-right" d="M174.3 -2 L97.6 47.7" />
+      </svg >
+    );
+  }
   return (
-    <div className='w-full bg-[var(--primary-color)]'>
-      <div className='header h-auto xl:h-[760px] overflow-hidden relative'>
-        <div ref={beadRef} className="w-[100px] h-[100px] top-[28%] right-[20%] lg:w-[200px] lg:h-[200px] lg:top-[8%] lg:right-[30%] xl:w-[300px] xl:h-[300px] bg-[url('/assets/background/bead.svg')] bg-contain bg-no-repeat absolute">
+    <div className='w-full h-auto bg-[var(--primary-color)]'>
+      <div className='header h-auto overflow-hidden relative'>
+        <div ref={beadRef} className="w-[100px] h-[100px] top-[38%] right-[20%] md:w-[200px] md:h-[200px] lg:w-[150px] lg:h-[200px] lg:top-[8%] lg:right-[30%] xl:w-[250px] xl:h-[250px] bg-[url('/assets/background/bead.svg')] bg-contain bg-no-repeat absolute">
         </div>
-        <div ref={tunnelRef} className="w-[100px] h-[100px] top-[40%] right-[70%] lg:w-[180px] lg:h-[180px] lg:top-[65%] lg:right-[50%] xl:w-[300px] xl:h-[300px] xl:top-[55%] xl:right-[47%] bg-[url('/assets/background/tunnel_void_retro.svg')] bg-contain bg-no-repeat absolute">
+        <div ref={tunnelRef} className="w-[100px] h-[100px] top-[60%] right-[60%] md:w-[200px] md:h-[200px] lg:w-[150px] lg:h-[150px] lg:top-[63%] lg:right-[60%] xl:w-[250px] xl:h-[250px] xl:top-[60%] xl:right-[50%] bg-[url('/assets/background/tunnel_void_retro.svg')] bg-contain bg-no-repeat absolute">
         </div>
-        <div className='flex flex-col justify-center lg:justify-between lg:flex-row items-center h-auto -translate-y-[28vw] lg:-translate-y-0 xl:-translate-y-31'>
+        <div className='flex flex-col justify-center -mb-30 md:-mb-50 md:-mt-20 lg:mb-0 lg:mt-0 lg:justify-between lg:flex-row items-center h-auto lg:gap-18'>
           {renderFrame()}
           <div className='glitch-name paused font-medium flex flex-col text-center' ref={glitchNameRef}>
             <h2 className="hero glitch layers" data-text="GHEORGHICIUC"><span className="select-none cursor-default">GHEORGHICIUC</span></h2>
