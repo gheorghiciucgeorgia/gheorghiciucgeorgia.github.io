@@ -256,9 +256,9 @@ const Hero = () => {
   return (
     <div className='w-full h-auto bg-[var(--primary-color)]'>
       <div className='header h-auto overflow-hidden relative'>
-        <div ref={beadRef} className="w-[100px] h-[100px] top-[38%] right-[20%] md:w-[200px] md:h-[200px] lg:w-[150px] lg:h-[200px] lg:top-[8%] lg:right-[30%] xl:w-[250px] xl:h-[250px] 2xl:w-[450px] 2xl:h-[450px] 2xl:top-[10%] 2xl:right-[30%] bg-[url('/assets/background/bead.svg')] bg-contain bg-no-repeat absolute">
+        <div ref={beadRef} className="w-[100px] h-[100px] top-[38%] right-[20%] md:w-[200px] md:h-[200px] lg:w-[150px] lg:h-[200px] lg:top-[8%] lg:right-[30%] xl:w-[250px] xl:h-[250px] bg-[url('/assets/background/bead.svg')] bg-contain bg-no-repeat absolute">
         </div>
-        <div ref={tunnelRef} className="w-[100px] h-[100px] top-[60%] right-[60%] md:w-[200px] md:h-[200px] lg:w-[150px] lg:h-[150px] lg:top-[63%] lg:right-[60%] xl:w-[250px] xl:h-[250px] xl:top-[60%] xl:right-[50%] 2xl:w-[450px] 2xl:h-[450px] bg-[url('/assets/background/tunnel_void_retro.svg')] bg-contain bg-no-repeat absolute">
+        <div ref={tunnelRef} className="w-[100px] h-[100px] top-[60%] right-[60%] md:w-[200px] md:h-[200px] lg:w-[150px] lg:h-[150px] lg:top-[63%] lg:right-[60%] xl:w-[250px] xl:h-[250px] xl:top-[60%] xl:right-[50%] bg-[url('/assets/background/tunnel_void_retro.svg')] bg-contain bg-no-repeat absolute">
         </div>
         <div className='flex flex-col justify-center -mb-30 md:-mb-50 md:-mt-20 lg:mb-0 lg:mt-0 lg:justify-between lg:flex-row items-center h-auto lg:gap-18'>
           {renderFrame()}
