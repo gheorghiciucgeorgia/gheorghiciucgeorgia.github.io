@@ -31,3 +31,14 @@ li .cybg {
     display: inline-block;
     line-height: 50px;
 }
+
+@media (min-width: 1536px) {
+    .nav-links a {
+        font-size: 19pt;
+        margin-right: 83px;
+    }
+
+    .nav-links a:first-child {
+        margin-right: 90px;
+    }
+}

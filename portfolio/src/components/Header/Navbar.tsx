@@ -75,12 +75,12 @@ const Navbar = () => {
     return (
         <>
             <div className="flex flex-row items-center align-center justify-between mx-[20px] navbar">
-                <div className="w-[110px] h-[60px] bg-[url('/assets/logo/light-logo.svg')] bg-contain bg-no-repeat">
+                <div className="w-[110px] 2xl:w-[177px] h-[60px] 2xl:h-[90px] bg-[url('/assets/logo/light-logo.svg')] bg-contain bg-no-repeat">
                 </div>
                 <div className="nav-links">
-                    <a className="about" href="#About"><SvgButton className="absolute w-[120px] top-[-31.5px] right-[300px] z-[1]"></SvgButton><span className="z-[2] sticky" ref={btnText[0]}>About</span></a>
-                    <a className="projects" href="#Projects"><SvgButton className="absolute w-[120px] top-[-31.5px] right-[160px] z-[1]"></SvgButton><span className="z-[2] sticky" ref={btnText[1]}>Projects</span></a>
-                    <a className="contact" href="#Contact"><SvgButton className="absolute w-[120px] top-[-31.5px] right-[20px] z-[1]"></SvgButton><span className="z-[2] sticky" ref={btnText[2]}>Contact</span></a>
+                    <a className="about" href="#About"><SvgButton className="absolute w-[120px] 2xl:w-[153px] top-[-31.5px] right-[300px] 2xl:right-[366px] z-[1]"></SvgButton><span className="z-[2] sticky" ref={btnText[0]}>About</span></a>
+                    <a className="projects" href="#Projects"><SvgButton className="absolute w-[120px] 2xl:w-[153px] top-[-31.5px] right-[160px] 2xl:right-[193px] z-[1]"></SvgButton><span className="z-[2] sticky" ref={btnText[1]}>Projects</span></a>
+                    <a className="contact" href="#Contact"><SvgButton className="absolute w-[120px] 2xl:w-[153px] top-[-31.5px] right-[20px] z-[1]"></SvgButton><span className="z-[2] sticky" ref={btnText[2]}>Contact</span></a>
                 </div>
             </div>
         </>
