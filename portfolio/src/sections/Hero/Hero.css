@@ -519,3 +519,18 @@
         font-size: clamp(10px, 5vw, 10px);
     }
 }
+
+@media (min-width: 1536px) {
+    .hero {
+        font-size: clamp(40px, 10vw, 150px);
+    }
+    
+    .text-custom {
+        font-size: clamp(20px, 10vw, 80px);
+        letter-spacing: 0px
+    }
+
+    .tagline {
+        font-size: clamp(10px, 5vw, 40px);
+    }
+}
