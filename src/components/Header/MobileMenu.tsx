@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import "./Header.css";
@@ -64,6 +64,14 @@ const MobileMenu: React.FC = () => {
 
   );
 
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+  }, [isOpen]);
+
 
   return (
     <>
@@ -94,9 +102,9 @@ const MobileMenu: React.FC = () => {
           <i ref={barCode} className="cybg-barcode cybg text-[150pt] absolute rotate-270 top-[450px] left-[-94px]" style={{ color: "var(--accent-color)" }}></i>
         </div>
         <ul className="space-y-2">
-          <li ><a className="about" href="#About"><i className="cybg-star-08 cybg mr-[10px]"></i>About</a></li>
-          <li ><a className="projects" href="#Projects"><i className="cybg-ellipse cybg mr-[10px]"></i>Projects</a></li>
-          <li ><a className="contact" href="#Contact"><i className="cybg-star-09 cybg mr-[10px]"></i>Contact</a></li>
+          <li><a onClick={() => setIsOpen(false)} className="about" href="#About"><i className="cybg-star-08 cybg mr-[10px]"></i>About</a></li>
+          <li><a onClick={() => setIsOpen(false)} className="projects" href="#Projects"><i className="cybg-ellipse cybg mr-[10px]"></i>Projects</a></li>
+          <li><a onClick={() => setIsOpen(false)} className="contact" href="#Contact"><i className="cybg-star-09 cybg mr-[10px]"></i>Contact</a></li>
         </ul>
       </div>
 
