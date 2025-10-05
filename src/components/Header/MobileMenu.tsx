@@ -94,9 +94,9 @@ const MobileMenu: React.FC = () => {
           <i ref={barCode} className="cybg-barcode cybg text-[150pt] absolute rotate-270 top-[450px] left-[-94px]" style={{ color: "var(--accent-color)" }}></i>
         </div>
         <ul className="space-y-2">
-          <li ><i className="cybg-star-08 cybg mr-[10px]"></i>About</li>
-          <li ><i className="cybg-ellipse cybg mr-[10px]"></i>Projects</li>
-          <li ><i className="cybg-star-09 cybg mr-[10px]"></i>Contact</li>
+          <li ><a className="about" href="#About"><i className="cybg-star-08 cybg mr-[10px]"></i>About</a></li>
+          <li ><a className="projects" href="#Projects"><i className="cybg-ellipse cybg mr-[10px]"></i>Projects</a></li>
+          <li ><a className="contact" href="#Contact"><i className="cybg-star-09 cybg mr-[10px]"></i>Contact</a></li>
         </ul>
       </div>
 
