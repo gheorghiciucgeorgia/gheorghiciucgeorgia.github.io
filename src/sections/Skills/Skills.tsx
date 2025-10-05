@@ -3,7 +3,7 @@ import './Skills.css';
 
 const Skills = () => {
     return (
-        <div className="flex flex-col items-center justify-center w-full h-auto bg-[var(--primary-color)] py-5 border-t-2 border-t-[var(--accent-color)] border-b-2 border-b-[var(--accent-color)]">
+        <div className="flex flex-col items-center justify-center w-full h-auto bg-[var(--primary-color)] py-5 border-t-2 border-t-[var(--accent-color)]">
             <div className='w-full h-auto flex flex-col justify-between gap-4'>
                 <div className='title-languages'>
                     <h2 className='font-(family-name:--heading-font) text-[var(--accent-color)] text-center text-[24pt] lg:text-[26pt]'>Languages</h2>
@@ -47,7 +47,7 @@ const Skills = () => {
                 <div className='title-styling'>
                     <h2 className='font-(family-name:--heading-font) text-[var(--accent-color)] text-center text-[24pt] lg:text-[26pt]'>Content Management System</h2>
                 </div>
-                <div className='w-full h-auto flex flex-row justify-evenly items-center'>
+                <div className='w-full h-auto flex flex-row justify-evenly items-center pb-10'>
                     <SkillCard icon="fa-brands fa-drupal" title="Drupal FE" colorFrame="var(--accent-color)" colorText="var(--secondary-color)" width={180} />
                 </div>
             </div>
