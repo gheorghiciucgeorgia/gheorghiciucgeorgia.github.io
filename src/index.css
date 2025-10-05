@@ -17,6 +17,18 @@
     --body-font: 'Oxanium', sans-serif;
 }
 
+body,
+.cursor {
+    cursor: url('/assets/cursor/cursor.svg'), default;
+}
+
+a,
+button,
+[role="button"],
+.clickable {
+    cursor: url('assets/cursor/cursor_pointer.svg'), pointer;
+}
+
 i[class*="fa"] {
     font-family: "Font Awesome 6 Brands", "Font Awesome 6 Free" !important;
 }

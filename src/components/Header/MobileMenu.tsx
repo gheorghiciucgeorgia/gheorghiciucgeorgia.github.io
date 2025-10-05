@@ -70,7 +70,7 @@ const MobileMenu: React.FC = () => {
 
       <div className="flex flex-row items-center align-center justify-between p-4 absolute w-full">
         {/* Hamburger */}
-        <div className="cursor-pointer flex flex-col gap-1.5 burger-menu z-4" onClick={() => setIsOpen(!isOpen)}>
+        <div className="clickable flex flex-col gap-1.5 burger-menu z-4" onClick={() => setIsOpen(!isOpen)}>
           <div ref={burgerTop} className="w-6 h-1 rounded-[10px] origin-left bg-[var(--secondary-color-variation)]"></div>
           <div ref={burgerMiddle} className="w-6 h-1 rounded-[10px] bg-[var(--secondary-color-variation)]"></div>
           <div ref={burgerBottom} className="w-6 h-1 rounded-[10px] origin-left bg-[var(--secondary-color-variation)]"></div>
