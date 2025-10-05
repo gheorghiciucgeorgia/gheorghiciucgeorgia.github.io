@@ -13,6 +13,7 @@ function App() {
       <Hero />
       <AboutMe />
       <Skills />
+      
 
       {/* Buttons components examples bellow */}
 
@@ -22,8 +23,6 @@ function App() {
 
 
       {/* <ProjectCard colorFrame="var(--accent-color)" className="w-[400px]" title="Lorem Ipsum" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitationullamco laboris nisi ut aliquip ex ea commodo consequat." imageUrl="/assets/placeholder-img-card.png" /> */}
-
-      {/* <SkillCard icon="fa-brands fa-html5" title="HTML5" colorFrame="var(--accent-color)" colorText="var(--primary-color)" width={200} /> */}
 
       {/* <Footer></Footer> */}
     </>
