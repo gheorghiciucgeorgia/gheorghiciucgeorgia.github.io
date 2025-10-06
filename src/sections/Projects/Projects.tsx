@@ -1,8 +1,20 @@
+import './Projects.css';
+import ProjectCard from '../../components/Card/ProjectCard';
+
 const Projects = () => {
     return (
-        <>
+        <div className="projects-section flex flex-wrap justify-center items-center w-full h-auto bg-[var(--secondary-color)] py-5 relative before:top-[-6px] md:before:top-[-18px] xl:before:top-[-35px]" id="Projects">
+            <h2 className="font-(family-name:--heading-font) text-[var(--accent-color)] text-center pb-5 text-[24pt] lg:text-[26pt]">Projects</h2>
+            <div className='w-full h-auto flex flex-wrap gap-4 justify-evenly items-center'>
+                <ProjectCard URL="dummy" colorFrame="var(--accent-color)" colorDescription='var(--accent-color)' colorTitle='var(--accent-color)' colorTextButton='var(--accent-color)' className="w-[400px]" title="Authentication Platform" description="React app using Firebase Authentication for secure sign-up, log-in, and profile updates. Features protected routes, form validation, and real-time user state handling, allowing users to manage their accounts and access a personalized dashboard." imageUrl="/assets/placeholder-img-card.png" />
+                <ProjectCard URL="dummy" colorFrame="var(--accent-color)" colorDescription='var(--accent-color)' colorTitle='var(--accent-color)' colorTextButton='var(--accent-color)' className="w-[400px]" title="Shirts - Ecommerce" description="A modern eCommerce web app built with React, featuring a homepage with carousel, product listings, detailed views, and a real-time cart system. Includes an image slider, “load more” functionality, and instant cart updates when users adjust quantities." imageUrl="/assets/placeholder-img-card.png" />
+                <ProjectCard URL="dummy" colorFrame="var(--accent-color)" colorDescription='var(--accent-color)' colorTitle='var(--accent-color)' colorTextButton='var(--accent-color)' className="w-[400px]" title="ChatGPT - Replica" description="A conversational web app built with Angular that closely simulates ChatGPT-style interactions and dynamic responses. Demonstrates component-based architecture, routing, services, and reactive forms in a simple yet fully functional chatbot interface." imageUrl="/assets/placeholder-img-card.png" />
+                <ProjectCard URL="dummy" colorFrame="var(--accent-color)" colorDescription='var(--accent-color)' colorTitle='var(--accent-color)' colorTextButton='var(--accent-color)' className="w-[400px]" title="Weather App" description="This is a simple Weather Application built with modern JavaScript that fetches and dynamically displays the current weather data, including temperature, humidity, and conditions for any city searched using the OpenWeatherMap API." imageUrl="/assets/placeholder-img-card.png" />
+                <ProjectCard URL="dummy" colorFrame="var(--accent-color)" colorDescription='var(--accent-color)' colorTitle='var(--accent-color)' colorTextButton='var(--accent-color)' className="w-[400px]" title="ColorPick - Extension" description="A lightweight browser extension for quickly picking colors from any webpage. Instantly grab precise HEX, RGB, or HSL values with a single, easy click. Perfect for designers and developers who need fast and accurate color selection." imageUrl="/assets/placeholder-img-card.png" />
+                <ProjectCard URL="dummy" colorFrame="var(--accent-color)" colorDescription='var(--accent-color)' colorTitle='var(--accent-color)' colorTextButton='var(--accent-color)' className="w-[400px]" title="GreenHeaven" description="GreenHeaven is a responsive Drupal 10 site built with Bootstrap 5, created to practice content types, modules, and theme customization. Includes editable components like carousel, video, and text blocks, with pages for homepage, plants, about, articles, and products." imageUrl="/assets/placeholder-img-card.png" />
+            </div>
 
-        </>
+        </div>
     );
 }
 export default Projects;

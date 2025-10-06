@@ -1,0 +1,10 @@
+.projects-section::before {
+    background: url('/assets/divider/divider.svg') repeat-x top;
+    content: "";
+    height: 39px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    display: block;
+    z-index: 2;
+}
