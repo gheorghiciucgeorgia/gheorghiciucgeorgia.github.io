@@ -14,6 +14,7 @@ type ProjectCardProps = {
     colorFrame?: string;
     className?: string;
     colorTextButton?: string;
+    URL?: string;
 };
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -24,7 +25,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     colorTitle,
     colorDescription,
     colorFrame,
-    colorTextButton
+    colorTextButton,
+    URL
 }) => {
     const c = colorFrame || '#000';
 
@@ -181,13 +183,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     };
 
     return (
-        <div ref={cardRef} className={`relative ${className}`}>
+        <div ref={cardRef} className={`overflow-hidden relative ${className}`}>
             {renderFrame()}
             <div className='content-card absolute top-[45%] mt-[53px] ml-[43px]'>
-                <img ref={imgRef} src={imageUrl} className='absolute top-[-61%]' />
+                <img ref={imgRef} src={imageUrl} className='absolute bottom-[100%]' />
                 <h3 style={{ color: colorTitle, fontFamily: 'var(--heading-font)' }} className='text-[20pt] mt-[-8px] ml-[3px]'>{title}</h3>
                 <p style={{ color: colorDescription, fontFamily: 'var(--body-font)' }} className='w-[80%] text-[11.5pt] leading-[1.17] mt-[32px] ml-[3px]'>{description}</p>
-                <Button className='top-[-114px] left-[-12px]' name="contact-btn" text="View More" colorText={colorTextButton} colorFrame={colorFrame} />
+                <Button URL={URL} className='inline-block w-[85%] top-[10px] left-[-12px]' name="contact-btn" text="View More" colorText={colorTextButton} colorFrame={colorFrame} />
             </div>
         </div>
     );
