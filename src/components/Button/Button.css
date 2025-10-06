@@ -1,4 +1,4 @@
-button span {
+a span {
     font-family: var(--body-font);
     font-weight: 600;
 }

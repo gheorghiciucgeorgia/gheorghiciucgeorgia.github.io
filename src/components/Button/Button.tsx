@@ -6,34 +6,39 @@ type ButtonProps = {
     colorText?: string;
     className?: string;
     colorFrame?: string;
+    URL?: string;
 }
 
-const Button: React.FC<ButtonProps> = ({ name, text, className, colorText, colorFrame }) => {
+const Button: React.FC<ButtonProps> = ({ name, text, className, colorText, colorFrame, URL }) => {
     const renderFrame = () => {
         switch (name) {
             case "contact-btn":
-                return (<svg
-
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 2000 2000"
-                    xmlSpace="preserve"
-                    className="w-full h-full"
-                >
-                    <path
-                        d="M1868.6 1132.9h-1.2L0 1126.3V982.7L115.7 867H2000v134.5l-.9.9zM6 1120.3l1860.1 6.7L1994 999.1V873H118.2L6 985.2z"
-                        style={{
-                            opacity: 0.25,
-                            fill: colorFrame || "#aeff00",
-                        }}
-                    />
-                    <path
-                        d="M1861.2 1115h-2.1l-1841.2-6.6V990.2L123.1 885H1982v109.1zM27.9 1098.5l1829.2 6.6 115.1-115v-95h-1845l-99.4 99.4v104z"
-                        style={{
-                            opacity: 0.5,
-                            fill: colorFrame || "#aeff00",
-                        }}
-                    />
-                </svg>);
+                return (
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 315 48"
+                        xmlSpace="preserve"
+                        className="w-full h-full"
+                    >
+                        <polygon
+                            points="313.2,22.3 290.7,44.2 1.8,44.2 1.8,21.6 20.1,3.8 313.2,3.8"
+                            style={{
+                                opacity: 0.5,
+                                fill: "none",
+                                stroke: "#AEFF00",
+                                strokeMiterlimit: 10,
+                            }}
+                        />
+                        <polygon
+                            points="4.2,23.3 20.9,7.1 310,7.1 310,20.3 289.1,40.7 4.2,40.7"
+                            style={{
+                                fill: "none",
+                                stroke: "#AEFF00",
+                                strokeMiterlimit: 10,
+                            }}
+                        />
+                    </svg>
+                );
             case "card-btn":
                 return (<svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -96,12 +101,12 @@ const Button: React.FC<ButtonProps> = ({ name, text, className, colorText, color
     };
 
     return (
-        <button className={`relative ${className}`}>
+        <a href={URL} className={`relative ${className}`}>
             {renderFrame()}
             <span className="absolute inset-0 flex items-center justify-center" style={{ color: colorText }}>
                 {text}
             </span>
-        </button>
+        </a>
     );
 };
 
