@@ -23,8 +23,6 @@ function App() {
       <Button name='contact-btn' text='Contact Me' /> */}
 
 
-      {/* <ProjectCard colorFrame="var(--accent-color)" className="w-[400px]" title="Lorem Ipsum" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitationullamco laboris nisi ut aliquip ex ea commodo consequat." imageUrl="/assets/placeholder-img-card.png" /> */}
-
       {/* <Footer></Footer> */}
     </>
   )
